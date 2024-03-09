@@ -16,7 +16,7 @@ jobs:
                 chmod 600 ~/.ssh/id_rsa
             - name: Setup Known Hosts
               run: |
-                echo "${{secrets.KNOWN_HOSTS}}" > ~/.ssh/known_hosts
+                echo "${{secrets.SSH_KNOWN_HOSTS}}" > ~/.ssh/known_hosts
                 chmod 644 ~/.ssh/known_hosts
             - name: SSH Deploy
               run: |
