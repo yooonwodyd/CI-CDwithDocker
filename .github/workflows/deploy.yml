@@ -27,7 +27,7 @@ jobs:
                 npm run build || exit 1
                 sudo npm run start || exit 1
                 sudo pKill node || exit 1
-                sudo npm run start & npx wait-on http://localhost
+                sudo npm run start & npx wait-on http://localhost -t 300000
                 exit
                 "
             
