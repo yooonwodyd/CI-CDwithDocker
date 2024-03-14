@@ -9,6 +9,20 @@ export const createApp = (client: RedisClient) => {
 
   app.use(express.json());
 
+
+  function fibonacci(n: number): number {
+    if (n <= 1) {
+      return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+
+  app.get("/fibonacci/:n", (request, response) => {
+    const n = parseInt(request.params.n,10);
+    const result = fibonacci(n);
+    response.status(200).send("Fibonachi number is " + result);
+  });
+
   app.get("/", (request, response) => {
     response.status(200).send("hello from express");
   });
