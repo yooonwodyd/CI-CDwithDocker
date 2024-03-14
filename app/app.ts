@@ -21,7 +21,7 @@ export const createApp = (client: RedisClient) => {
     console.log(process.env.pm_id)
     const n = parseInt(request.params.n,10);
     const result = fibonacci(n);
-    response.status(200).send("Fibonachi number is " + result);
+    response.status(200).send("Fibonachi number is " + result + " from process " + process.env.pm_id);
   });
 
   app.get("/", (request, response) => {
