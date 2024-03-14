@@ -1,11 +1,11 @@
 config:
-  target: "http://localhost:4000"
+  target: "https://injaeyong.com"
   phases:
     - duration: 5
-      arrivalRate: 1000
+      arrivalRate: 50
 
 scenarios:
   - flow:
       - get:
-          url: "/messages"
+          url: "/fibonacci/5"
 
