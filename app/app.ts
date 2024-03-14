@@ -18,6 +18,7 @@ export const createApp = (client: RedisClient) => {
   }
 
   app.get("/fibonacci/:n", (request, response) => {
+    console.log(process.env.pm_id)
     const n = parseInt(request.params.n,10);
     const result = fibonacci(n);
     response.status(200).send("Fibonachi number is " + result);
